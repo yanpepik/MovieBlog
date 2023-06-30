@@ -11,10 +11,10 @@ final class MainViewModel: MainViewModelProtocol, ObservableObject {
 
     //MARK: - Properties
     private let interactor: MainBusinessLogic
-    private let router: MainRoutingLogic
+    private let router: RoutingLogic
 
     //MARK: - Initialization
-    init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
+    init(interactor: MainBusinessLogic, router: RoutingLogic) {
         self.interactor = interactor
         self.router = router
     }

@@ -9,43 +9,37 @@
 /* Begin PBXBuildFile section */
 		FAB4C0442A4DB44F00F074B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0432A4DB44F00F074B7 /* AppDelegate.swift */; };
 		FAB4C0462A4DB44F00F074B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0452A4DB44F00F074B7 /* SceneDelegate.swift */; };
-		FAB4C0482A4DB44F00F074B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0472A4DB44F00F074B7 /* ViewController.swift */; };
 		FAB4C04D2A4DB45000F074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4C04C2A4DB45000F074B7 /* Assets.xcassets */; };
 		FAB4C0502A4DB45000F074B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB4C04E2A4DB45000F074B7 /* LaunchScreen.storyboard */; };
 		FAB4C05F2A4DC89500F074B7 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C05E2A4DC89400F074B7 /* MainProtocols.swift */; };
 		FAB4C0612A4DC8C300F074B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0602A4DC8C300F074B7 /* MainView.swift */; };
-		FAB4C0632A4DC8E400F074B7 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0622A4DC8E400F074B7 /* MainAssembly.swift */; };
-		FAB4C0662A4DC8F900F074B7 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0652A4DC8F900F074B7 /* MainRouter.swift */; };
 		FAB4C0682A4DC9A400F074B7 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0672A4DC9A400F074B7 /* MainInteractor.swift */; };
 		FAB4C06A2A4DCA7D00F074B7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0692A4DCA7D00F074B7 /* MainViewModel.swift */; };
 		FAB4C0742A4DDE1600F074B7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0732A4DDE1600F074B7 /* DetailView.swift */; };
 		FAB4C0762A4DDE1F00F074B7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0752A4DDE1F00F074B7 /* DetailViewModel.swift */; };
-		FAB4C0782A4DDE2700F074B7 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0772A4DDE2700F074B7 /* DetailRouter.swift */; };
-		FAB4C07A2A4DDE3000F074B7 /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0792A4DDE3000F074B7 /* DetailAssembly.swift */; };
 		FAB4C07C2A4DDE3900F074B7 /* DetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C07B2A4DDE3900F074B7 /* DetailProtocols.swift */; };
 		FAB4C07E2A4DDEDE00F074B7 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C07D2A4DDEDE00F074B7 /* DetailInteractor.swift */; };
+		FAB4C0812A4EDC9600F074B7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0802A4EDC9600F074B7 /* Router.swift */; };
+		FAB4C0832A4EDCA500F074B7 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C0822A4EDCA500F074B7 /* Assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAB4C0402A4DB44F00F074B7 /* MovieBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB4C0432A4DB44F00F074B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB4C0452A4DB44F00F074B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAB4C0472A4DB44F00F074B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAB4C04C2A4DB45000F074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB4C04F2A4DB45000F074B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB4C0512A4DB45000F074B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB4C05E2A4DC89400F074B7 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		FAB4C0602A4DC8C300F074B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		FAB4C0622A4DC8E400F074B7 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
-		FAB4C0652A4DC8F900F074B7 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		FAB4C0672A4DC9A400F074B7 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		FAB4C0692A4DCA7D00F074B7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FAB4C0732A4DDE1600F074B7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FAB4C0752A4DDE1F00F074B7 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		FAB4C0772A4DDE2700F074B7 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
-		FAB4C0792A4DDE3000F074B7 /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		FAB4C07B2A4DDE3900F074B7 /* DetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocols.swift; sourceTree = "<group>"; };
 		FAB4C07D2A4DDEDE00F074B7 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		FAB4C0802A4EDC9600F074B7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FAB4C0822A4EDCA500F074B7 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +85,8 @@
 			children = (
 				FAB4C0452A4DB44F00F074B7 /* SceneDelegate.swift */,
 				FAB4C0432A4DB44F00F074B7 /* AppDelegate.swift */,
+				FAB4C0802A4EDC9600F074B7 /* Router.swift */,
+				FAB4C0822A4EDCA500F074B7 /* Assembly.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -107,7 +103,6 @@
 		FAB4C0592A4DB6E100F074B7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				FAB4C0472A4DB44F00F074B7 /* ViewController.swift */,
 				FAB4C0512A4DB45000F074B7 /* Info.plist */,
 			);
 			path = Configuration;
@@ -129,8 +124,6 @@
 				FAB4C0692A4DCA7D00F074B7 /* MainViewModel.swift */,
 				FAB4C05E2A4DC89400F074B7 /* MainProtocols.swift */,
 				FAB4C0672A4DC9A400F074B7 /* MainInteractor.swift */,
-				FAB4C0622A4DC8E400F074B7 /* MainAssembly.swift */,
-				FAB4C0652A4DC8F900F074B7 /* MainRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -142,8 +135,6 @@
 				FAB4C0752A4DDE1F00F074B7 /* DetailViewModel.swift */,
 				FAB4C07B2A4DDE3900F074B7 /* DetailProtocols.swift */,
 				FAB4C07D2A4DDEDE00F074B7 /* DetailInteractor.swift */,
-				FAB4C0792A4DDE3000F074B7 /* DetailAssembly.swift */,
-				FAB4C0772A4DDE2700F074B7 /* DetailRouter.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -218,19 +209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB4C0482A4DB44F00F074B7 /* ViewController.swift in Sources */,
-				FAB4C0662A4DC8F900F074B7 /* MainRouter.swift in Sources */,
 				FAB4C0442A4DB44F00F074B7 /* AppDelegate.swift in Sources */,
-				FAB4C07A2A4DDE3000F074B7 /* DetailAssembly.swift in Sources */,
 				FAB4C0742A4DDE1600F074B7 /* DetailView.swift in Sources */,
 				FAB4C0462A4DB44F00F074B7 /* SceneDelegate.swift in Sources */,
 				FAB4C07E2A4DDEDE00F074B7 /* DetailInteractor.swift in Sources */,
 				FAB4C0612A4DC8C300F074B7 /* MainView.swift in Sources */,
-				FAB4C0632A4DC8E400F074B7 /* MainAssembly.swift in Sources */,
+				FAB4C0812A4EDC9600F074B7 /* Router.swift in Sources */,
+				FAB4C0832A4EDCA500F074B7 /* Assembly.swift in Sources */,
 				FAB4C05F2A4DC89500F074B7 /* MainProtocols.swift in Sources */,
 				FAB4C0682A4DC9A400F074B7 /* MainInteractor.swift in Sources */,
 				FAB4C07C2A4DDE3900F074B7 /* DetailProtocols.swift in Sources */,
-				FAB4C0782A4DDE2700F074B7 /* DetailRouter.swift in Sources */,
 				FAB4C0762A4DDE1F00F074B7 /* DetailViewModel.swift in Sources */,
 				FAB4C06A2A4DCA7D00F074B7 /* MainViewModel.swift in Sources */,
 			);

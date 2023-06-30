@@ -10,10 +10,10 @@ import SwiftUI
 final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
     //MARK: - Properties
     private let interactor: DetailBusinessLogic
-    private let router: DetailRoutingLogic
+    private let router: RoutingLogic
 
     //MARK: - Initialization
-    init(interactor: DetailBusinessLogic, router: DetailRoutingLogic) {
+    init(interactor: DetailBusinessLogic, router: RoutingLogic) {
         self.interactor = interactor
         self.router = router
     }
