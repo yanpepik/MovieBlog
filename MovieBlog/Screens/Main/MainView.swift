@@ -21,7 +21,7 @@ struct MainView<ViewModel: MainViewModelProtocol & ObservableObject>: View {
         VStack {
             Text("MainView")
             Button("RouteToDetail") {
-                viewModel.buttonIsPressed()
+                viewModel.buttonPressed()
             }
         }
     }

@@ -8,11 +8,11 @@
 import Foundation
 
 protocol MainViewModelProtocol: AnyObject {
-    func buttonIsPressed()
+    func buttonPressed()
 }
 
 protocol MainBusinessLogic: AnyObject {}
 
-protocol MainRoutingLogic: AnyObject {
-    func routeToDetail()
+protocol MainScreenDelegate {
+    func  mainWantsToShowDetails()
 }

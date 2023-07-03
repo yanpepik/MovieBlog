@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-final class MainViewModel: MainViewModelProtocol, ObservableObject {
+final class MainViewModel: ObservableObject {
 
     //MARK: - Properties
     private let interactor: MainBusinessLogic
-    private let router: RoutingLogic
+    private let delegate: MainScreenDelegate?
 
     //MARK: - Initialization
-    init(interactor: MainBusinessLogic, router: RoutingLogic) {
+    init(interactor: MainBusinessLogic, delegate: MainScreenDelegate?) {
+        self.delegate = delegate
         self.interactor = interactor
-        self.router = router
     }
+}
 
-    func buttonIsPressed() {
-        router.routeToDetail()
+//MARK: - MainViewModelProtocol
+extension MainViewModel: MainViewModelProtocol {
+    func buttonPressed() {
+        delegate?.mainWantsToShowDetails()
     }
 }

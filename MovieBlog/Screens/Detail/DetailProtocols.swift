@@ -13,6 +13,6 @@ protocol DetailViewModelProtocol: AnyObject {
 
 protocol DetailBusinessLogic: AnyObject {}
 
-protocol DetailRoutingLogic: AnyObject {
-    func routeToMain()
+protocol DetailScreenDelegate {
+    func  detailWantsToShowDetails()
 }
