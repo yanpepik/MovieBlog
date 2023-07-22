@@ -8,11 +8,14 @@
 import Foundation
 
 protocol MainViewModelProtocol: AnyObject {
+    var mainItem: [MainItem]? { get }
     func buttonPressed()
 }
 
-protocol MainBusinessLogic: AnyObject {}
+protocol MainBusinessLogic: AnyObject {
+    func fetchTrendingMovies() async throws -> [MainModels.Movie]
+}
 
 protocol MainScreenDelegate {
-    func  mainWantsToShowDetails()
+    func mainWantsToShowDetails()
 }
