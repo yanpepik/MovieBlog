@@ -11,19 +11,16 @@ struct Request<BodyType: Encodable> {
     // MARK: - Properties
     let endpoint: EndpointProtocol
     let requestMethod: RequestMethod
-    let parameters: [URLQueryItem]?
-    let body: BodyType
+    let body: BodyType?
     
     // MARK: - Initialization
     init(
         endpoint: EndpointProtocol,
         requestMethod: RequestMethod,
-        parameters: [URLQueryItem]? = nil,
-        body: BodyType
+        body: BodyType? = nil
     ) {
         self.endpoint = endpoint
         self.requestMethod = requestMethod
-        self.parameters = parameters
         self.body = body
     }
 }
@@ -31,13 +28,11 @@ struct Request<BodyType: Encodable> {
 extension Request where BodyType == Empty {
     init(
         endpoint: EndpointProtocol,
-        requestMethod: RequestMethod,
-        parameters: [URLQueryItem]? = nil
+        requestMethod: RequestMethod
     ) {
         self.init(
             endpoint: endpoint,
             requestMethod: requestMethod,
-            parameters: parameters,
             body: Empty()
         )
     }

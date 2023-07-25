@@ -8,21 +8,14 @@
 import Foundation
 import SwiftUI
 
-final class NetworkService {
-    // MARK: - Public Properties
-    static let shared = NetworkService()
-
-    // MARK: - Private Properties
-    let decoder = JSONDecoder()
-    let encoder = JSONEncoder()
-
-    // MARK: - Initialization
-    private init() {}
-
-    // MARK: - Public Methods
+final class NetworkService: NetworkServiceProtocol {
+    // MARK: - Methods
     func performRequest<BodyType: Encodable, ResponseType: Decodable>(
         request: Request<BodyType>
     ) async throws -> Response<ResponseType> {
+        let decoder = JSONDecoder()
+        let encoder = JSONEncoder()
+
         guard let url = buildURL(with: request) else {
             throw NetworkError(
                 errorType: .urlBuilding,
@@ -106,7 +99,7 @@ final class NetworkService {
         components.scheme = request.endpoint.scheme
         components.percentEncodedHost = request.endpoint.host
         components.path = request.endpoint.path
-        components.queryItems = request.parameters
+        components.queryItems = request.endpoint.parameters
 
         return components.url
     }

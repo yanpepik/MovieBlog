@@ -8,7 +8,9 @@
 import Foundation
 
 protocol MainViewModelProtocol: AnyObject {
-    var mainItem: [MainItem]? { get }
+    var mainItem: [MainItem] { get }
+    var isShowingAlert: Bool { get set }
+    var alertMessage: String { get }
     func buttonPressed()
 }
 

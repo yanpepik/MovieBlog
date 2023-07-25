@@ -11,7 +11,7 @@ import SwiftUI
 final class Assembly: AssemblyProtocol {
 
     func main(with delegate: MainScreenDelegate?) -> UIViewController {
-        let networkService = NetworkService.shared
+        let networkService = NetworkService()
         let interactor = MainInteractor(networkService: networkService)
         let viewModel = MainViewModel(interactor: interactor, delegate: delegate)
         let view = MainView(viewModel: viewModel)

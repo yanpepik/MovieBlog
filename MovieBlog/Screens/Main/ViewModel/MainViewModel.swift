@@ -9,9 +9,14 @@ import SwiftUI
 
 final class MainViewModel: ObservableObject, MainViewModelProtocol {
     //MARK: - Properties
+    @Published var mainItem: [MainItem] = []
+    @Published var isShowingAlert = false
+    @Published var alertMessage = ""
+
+    //MARK: - Private Properties
     private let interactor: MainBusinessLogic
     private let delegate: MainScreenDelegate?
-    @Published var mainItem: [MainItem]?
+
 
     //MARK: - Initialization
     init(interactor: MainBusinessLogic, delegate: MainScreenDelegate?) {
@@ -28,10 +33,13 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
                     self.mainItem = movies.map { movie in
                         MainItem(title: movie.title)
                     }
-                    print(self.mainItem!)
+                    print(self.mainItem)
                 }
-            } catch {
-                print("Error: \(error)")
+            } catch let error {
+                DispatchQueue.main.async {
+                    self.alertMessage = error.localizedDescription
+                    self.isShowingAlert = true
+                }
             }
         }
     }

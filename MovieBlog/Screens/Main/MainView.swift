@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView<ViewModel: MainViewModelProtocol & ObservableObject>: View {
     //MARK: - Properties
     @StateObject private var viewModel: ViewModel
+    @State private var showAlert = false
 
     //MARK: - Initialization
     init(viewModel: @escaping @autoclosure () -> ViewModel) {
@@ -23,6 +24,9 @@ struct MainView<ViewModel: MainViewModelProtocol & ObservableObject>: View {
             Button("RouteToDetail") {
                 viewModel.buttonPressed()
             }
+        }
+        .alert(isPresented: $viewModel.isShowingAlert) {
+            Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
         }
     }
 }
