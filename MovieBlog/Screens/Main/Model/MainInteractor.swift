@@ -14,8 +14,8 @@ final class MainInteractor: MainBusinessLogic {
         self.networkService = networkService
     }
 
-    func fetchTrendingMovies() async throws -> [MainModels.Movie] {
-        let request = Request(endpoint: Endpoint.trendingMovies, requestMethod: .GET)
+    func fetchTrendingMovies() async throws -> [Movie] {
+        let request = Request(endpoint: Endpoint.trendingMovies, method: .GET)
         do {
             let response: Response<MovieSearchResponse> = try await networkService.performRequest(request: request)
             return response.body?.results ?? []

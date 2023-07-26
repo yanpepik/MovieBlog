@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 final class Assembly: AssemblyProtocol {
+    // MARK: - Private Properties
+       private let networkService = NetworkService()
 
     func main(with delegate: MainScreenDelegate?) -> UIViewController {
-        let networkService = NetworkService()
         let interactor = MainInteractor(networkService: networkService)
         let viewModel = MainViewModel(interactor: interactor, delegate: delegate)
         let view = MainView(viewModel: viewModel)

@@ -13,37 +13,7 @@ final class NetworkService: NetworkServiceProtocol {
     func performRequest<BodyType: Encodable, ResponseType: Decodable>(
         request: Request<BodyType>
     ) async throws -> Response<ResponseType> {
-        let decoder = JSONDecoder()
-        let encoder = JSONEncoder()
-
-        guard let url = buildURL(with: request) else {
-            throw NetworkError(
-                errorType: .urlBuilding,
-                message: "Failed to build URL"
-            )
-        }
-
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = request.requestMethod.rawValue
-
-        if request.requestMethod != .GET {
-            do {
-                let encodedBody = try encoder.encode(request.body)
-                urlRequest.httpBody = encodedBody
-            } catch {
-                throw NetworkError(
-                    errorType: .encoding,
-                    message: "Failed to encode data, check body that you provided"
-                )
-            }
-        }
-
-        if let headers = request.endpoint.headers {
-            for (key, value) in headers {
-                urlRequest.setValue(value, forHTTPHeaderField: key)
-            }
-        }
-
+        let urlRequest = try request.buildURLRequest()
         do {
             let (data, urlResponse) = try await URLSession.shared.data(for: urlRequest)
 
@@ -58,6 +28,7 @@ final class NetworkService: NetworkServiceProtocol {
 
             switch httpResponse.statusCode {
             case 200...299:
+                let decoder = JSONDecoder()
                 let decodedBody = try decoder.decode(ResponseType.self, from: data)
                 let response = Response(statusCode: httpResponse.statusCode, headers: headers, body: decodedBody)
                 return response
@@ -91,16 +62,5 @@ final class NetworkService: NetworkServiceProtocol {
                 )
             }
         }
-    }
-
-    // MARK: - Private Methods
-    private func buildURL<BodyType: Encodable>(with request: Request<BodyType>) -> URL? {
-        var components = URLComponents()
-        components.scheme = request.endpoint.scheme
-        components.percentEncodedHost = request.endpoint.host
-        components.path = request.endpoint.path
-        components.queryItems = request.endpoint.parameters
-
-        return components.url
     }
 }

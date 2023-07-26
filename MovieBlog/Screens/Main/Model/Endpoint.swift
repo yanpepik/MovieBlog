@@ -28,7 +28,7 @@ enum Endpoint: EndpointProtocol {
     var headers: [String: String]? {
         return [
             "accept": "application/json",
-            "Authorization": GlobalConstants().authorizationKey
+            "Authorization": GlobalConstants.authorizationKey
         ]
     }
 

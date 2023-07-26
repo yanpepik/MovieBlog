@@ -8,5 +8,5 @@
 import Foundation
 
 struct MovieSearchResponse: Codable {
-    let results: [MainModels.Movie]
+    let results: [Movie]
 }

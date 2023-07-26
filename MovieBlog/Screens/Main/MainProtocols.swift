@@ -15,7 +15,7 @@ protocol MainViewModelProtocol: AnyObject {
 }
 
 protocol MainBusinessLogic: AnyObject {
-    func fetchTrendingMovies() async throws -> [MainModels.Movie]
+    func fetchTrendingMovies() async throws -> [Movie]
 }
 
 protocol MainScreenDelegate {
