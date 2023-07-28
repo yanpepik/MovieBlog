@@ -6,7 +6,38 @@
 //
 
 import Foundation
+import Combine
 
-struct MainItem {
-    let title: String
+import Foundation
+import Combine
+
+extension MainViewModel {
+    struct Data {
+        let items: [Item]
+        var state: State
+
+        enum State {
+            case initial
+            case loading
+            case loaded
+            case error(message: String)
+
+            var errorMessage: String {
+                guard case .error(let message) = self else { return "" }
+                return message
+            }
+
+            var isFailed: Bool {
+                get {
+                    switch self {
+                    case .error:
+                        return true
+                    default:
+                        return false
+                    }
+                }
+                set {}
+            }
+        }
+    }
 }

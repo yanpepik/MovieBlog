@@ -10,13 +10,9 @@ import Foundation
 enum Endpoint: EndpointProtocol {
     case trendingMovies
 
-    var scheme: String {
-        return "https"
-    }
+    var scheme: String { "https" }
 
-    var host: String {
-        return "api.themoviedb.org"
-    }
+    var host: String { "api.themoviedb.org" }
 
     var path: String {
         switch self {
@@ -26,14 +22,14 @@ enum Endpoint: EndpointProtocol {
     }
 
     var headers: [String: String]? {
-        return [
+        [
             "accept": "application/json",
-            "Authorization": GlobalConstants.authorizationKey
+            "Authorization": NetworkConstants.authorizationKey
         ]
     }
 
     var parameters: [URLQueryItem]? {
-        return [
+        [
             URLQueryItem(name: "api_key", value: "9b6f1a5c7d789ccc772f90ad774abe38")
         ]
     }

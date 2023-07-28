@@ -5,8 +5,6 @@
 //  Created by Yan Pepik on 29/06/2023.
 //
 
-import Foundation
-
 final class MainInteractor: MainBusinessLogic {
     private let networkService: NetworkServiceProtocol
 
@@ -14,13 +12,14 @@ final class MainInteractor: MainBusinessLogic {
         self.networkService = networkService
     }
 
-    func fetchTrendingMovies() async throws -> [Movie] {
+    func fetchTrendingMovies() async throws -> [MainMovies] {
         let request = Request(endpoint: Endpoint.trendingMovies, method: .GET)
-        do {
-            let response: Response<MovieSearchResponse> = try await networkService.performRequest(request: request)
-            return response.body?.results ?? []
-        } catch {
-            throw error
+        let response: Response<MovieSearchResponseDto> = try await networkService.performRequest(request: request)
+
+        let model = response.body.results.map { trendingMovie in
+            MainMovies(id: trendingMovie.id, title: trendingMovie.title)
         }
+
+        return model
     }
 }

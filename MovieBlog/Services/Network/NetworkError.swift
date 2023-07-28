@@ -9,16 +9,19 @@ import Foundation
 
 enum ErrorType: String, Decodable {
     case urlBuilding
-    case decoding
-    case encoding
     case redirection
     case undefined
     case timeout
 }
 
+enum CodingError: Error, Decodable {
+    case decoding
+    case encoding
+}
+
 struct NetworkError: Error, Decodable {
-    // MARK: - Public Properties
-    var statusCode: Int
+    // MARK: - Properties
+    let statusCode: Int
     let errorType: ErrorType
     let message: String?
     let headers: [String: String]?

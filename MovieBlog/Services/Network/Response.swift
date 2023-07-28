@@ -11,13 +11,13 @@ struct Response<ResponseType: Decodable> {
     // MARK: - Public Properties
     let statusCode: Int
     let headers: [String: String]?
-    let body: ResponseType?
+    let body: ResponseType
 
     // MARK: - Initialization
     init(
         statusCode: Int,
         headers: [String: String]?,
-        body: ResponseType?
+        body: ResponseType
     ) {
         self.statusCode = statusCode
         self.headers = headers
